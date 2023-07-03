@@ -9,5 +9,6 @@ namespace HrManagement.Application.Persistence.Contract
 {
     public interface ILeaveRequestRepository : IGenericRepository<LeaveRequest>
     {
+
     }
 }
