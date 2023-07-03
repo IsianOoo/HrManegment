@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace HrManagement.Application.Features.LeaveTypes.Requests
 {
-    public class GetLeaveTypeListRequest : IRequest<List<LeaveTypeDto>>
+    public class GetLeaveTypeDetailRequest : IRequest<LeaveTypeDto>
     {
-
+        public int Id { get; set; }
     }
 }
