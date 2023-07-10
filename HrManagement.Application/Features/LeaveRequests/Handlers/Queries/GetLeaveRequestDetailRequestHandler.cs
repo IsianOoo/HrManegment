@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HrManagement.Application.Features.LeaveAllocations.Handlers.Queries
+namespace HrManagement.Application.Features.LeaveRequests.Handlers.Queries
 {
-    internal class GetLeaveAllocationListRequestHandler
+    internal class GetLeaveRequestDetailRequestHandler
     {
     }
 }
