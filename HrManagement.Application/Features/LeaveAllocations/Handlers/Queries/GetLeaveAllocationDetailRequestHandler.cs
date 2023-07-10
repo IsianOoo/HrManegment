@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using HrManagement.Application.DTOs;
 using HrManagement.Application.Features.LeaveAllocations.Requests.Queries;
 using HrManagement.Application.Persistence.Contract;
 using MediatR;
@@ -9,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using HrManagement.Application.DTOs.LeaveAllocation;
 
 namespace HrManagement.Application.Features.LeaveAllocations.Handlers.Queries
 {
