@@ -13,6 +13,6 @@ namespace HrManagement.Application.Persistence.Contract
 
         Task<T> Add(T entity);
         Task<T> Update(T entity);
-        Task Delete(int id);
+        Task Delete(T entity);
     }
 }
