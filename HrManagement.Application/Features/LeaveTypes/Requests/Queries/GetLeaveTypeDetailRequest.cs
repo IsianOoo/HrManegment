@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HrManagement.Application.Features.LeaveTypes.Requests
+namespace HrManagement.Application.Features.LeaveTypes.Requests.Queries
 {
     public class GetLeaveTypeDetailRequest : IRequest<LeaveTypeDto>
     {

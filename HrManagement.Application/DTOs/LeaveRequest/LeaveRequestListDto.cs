@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hr.Management.Domain;
-using HrManagement.Application.DTOs.LeaveTypeDto;
+using HrManagement.Application.DTOs.LeaveType;
 
 
 namespace HrManagement.Application.DTOs.LeaveRequest

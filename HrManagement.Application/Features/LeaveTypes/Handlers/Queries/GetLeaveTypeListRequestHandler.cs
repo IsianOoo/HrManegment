@@ -1,5 +1,4 @@
-﻿using HrManagement.Application.Features.LeaveTypes.Requests;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +8,7 @@ using System.Threading;
 using HrManagement.Application.Persistence.Contract;
 using AutoMapper;
 using HrManagement.Application.DTOs.LeaveTypeDto;
+using HrManagement.Application.Features.LeaveTypes.Requests.Queries;
 
 namespace HrManagement.Application.Features.LeaveTypes.Handlers.Queries
 {
