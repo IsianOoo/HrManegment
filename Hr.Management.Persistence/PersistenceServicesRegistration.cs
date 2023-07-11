@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Hr.Management.Persistence
 {
-    public static class PersistenceServicesRegistration
+    public static partial class PersistenceServicesRegistration
     {
         public static IServiceCollection ConfigurePresistenceServices(this IServiceCollection services,IConfiguration configuration)
         {
