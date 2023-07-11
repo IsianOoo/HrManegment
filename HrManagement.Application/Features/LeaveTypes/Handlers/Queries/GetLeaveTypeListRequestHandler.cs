@@ -7,7 +7,7 @@ using MediatR;
 using System.Threading;
 using HrManagement.Application.Persistence.Contract;
 using AutoMapper;
-using HrManagement.Application.DTOs.LeaveTypeDto;
+using HrManagement.Application.DTOs.LeaveType;
 using HrManagement.Application.Features.LeaveTypes.Requests.Queries;
 
 namespace HrManagement.Application.Features.LeaveTypes.Handlers.Queries

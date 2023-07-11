@@ -8,7 +8,7 @@ using HrManagement.Application.DTOs.LeaveType;
 
 namespace HrManagement.Application.Features.LeaveTypes.Requests.Commands
 {
-    public class CreateLeaveTypCommand : IRequest<int>
+    public class CreateLeaveTypeCommand : IRequest<int>
     {
         public LeaveTypeDto LeaveTypeDto { get; set; }
 

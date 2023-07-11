@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using HrManagement.Application.DTOs.LeaveTypeDto;
+using HrManagement.Application.DTOs.LeaveType;
 using HrManagement.Application.Features.LeaveTypes.Requests.Queries;
 using HrManagement.Application.Persistence.Contract;
 using MediatR;
@@ -18,6 +18,7 @@ namespace HrManagement.Application.Features.LeaveTypes.Handlers.Queries
         public GetLeaveTypeDetailRequestHandler(ILeaveTypeRepository leaveTypeRepository, IMapper mapper)
         {
             _leaveTypeRepository = leaveTypeRepository;
+            _mapper = mapper;
         }
         public async Task<LeaveTypeDto> Handle(GetLeaveTypeDetailRequest request, CancellationToken cancellationToken)
         {

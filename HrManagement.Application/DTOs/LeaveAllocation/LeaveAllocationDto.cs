@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HrManagement.Application.DTOs.LeaveTypeDto;
+using HrManagement.Application.DTOs.LeaveType;
 
 namespace HrManagement.Application.DTOs.LeaveAllocation
 {

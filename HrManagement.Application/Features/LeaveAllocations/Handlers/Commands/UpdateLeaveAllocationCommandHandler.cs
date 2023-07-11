@@ -23,9 +23,9 @@ namespace HrManagement.Application.Features.LeaveAllocations.Handlers.Commands
         }
         public async Task<Unit> Handle(UpdateLeaveAllocationCommand request, CancellationToken cancellationToken)
         {
-            var leaveAllocation = await _leaveTypeRepository.Get(request.LeaveTypeDto.Id);
-            _mapper.Map(request.LeaveTypeDto, leaveAllocation);
-            await _leaveTypeRepository.Update(leaveAllocation);
+            var leaveAllocation = await _leaveAllocationRepository.Get(request.LeaveAllocationDto.Id);
+            _mapper.Map(request.LeaveAllocationDto, leaveAllocation);
+            await _leaveAllocationRepository.Update(leaveAllocation);
             return Unit.Value;
         }
     }
