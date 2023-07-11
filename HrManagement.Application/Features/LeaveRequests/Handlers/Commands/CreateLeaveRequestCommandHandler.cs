@@ -4,7 +4,9 @@ using HrManagement.Application.DTOs.LeaveRequest.Validators;
 using HrManagement.Application.Exceptions;
 using HrManagement.Application.Features.LeaveAllocations.Requests.Commands;
 using HrManagement.Application.Features.LeaveRequests.Requests.Commands;
+using HrManagement.Application.Models;
 using HrManagement.Application.Persistence.Contract;
+using HrManagement.Application.Persistence.Infrastructure;
 using HrManagement.Application.Responses;
 using MediatR;
 using System;
@@ -19,12 +21,17 @@ namespace HrManagement.Application.Features.LeaveRequests.Handlers.Commands
     {
         private readonly ILeaveRequestRepository _leaveRequestRepository;
         private readonly ILeaveTypeRepository _leaveTypeRepository;
+        private readonly IEmailSender _emailSender;
         private readonly IMapper _mapper;
 
-        public CreateLeaveRequestCommandHandler(ILeaveRequestRepository leaveRequestRepository, IMapper mapper, ILeaveTypeRepository leaveTypeRepository)
+        public CreateLeaveRequestCommandHandler(ILeaveRequestRepository leaveRequestRepository,
+            IMapper mapper,
+            ILeaveTypeRepository leaveTypeRepository,
+            IEmailSender emailSender)
         {
             _leaveRequestRepository = leaveRequestRepository;
             _mapper = mapper;
+            _emailSender = emailSender;
             _leaveTypeRepository = leaveTypeRepository;
         }
 
@@ -49,6 +56,13 @@ namespace HrManagement.Application.Features.LeaveRequests.Handlers.Commands
             response.Success = true;
             response.Message = "Creation Sucessful";
             response.Id = leaveRequest.Id;
+            var email = new Email
+            {
+                To = "employee@org.com",
+                Body = $"Your leave request for{request.LeaveRequestDto.StartDate} to {request.LeaveRequestDto.EndDate}" +
+                $"has been submitted successfully.",
+                Subject = "Leave Request Submitted"
+            };
             return response;
         }
     }

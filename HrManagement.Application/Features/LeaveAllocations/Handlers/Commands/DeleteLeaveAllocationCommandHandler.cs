@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using Hr.Management.Domain;
+using HrManagement.Application.Exceptions;
 using HrManagement.Application.Features.LeaveAllocations.Requests.Commands;
+using HrManagement.Application.Features.LeaveTypes.Requests.Commands;
 using HrManagement.Application.Persistence.Contract;
 using MediatR;
 using System;
@@ -12,8 +15,9 @@ namespace HrManagement.Application.Features.LeaveAllocations.Handlers.Commands
 {
     public class DeleteLeaveAllocationCommandHandler : IRequestHandler<DeleteLeaveAllocationCommand>
     {
-        private readonly ILeaveTypeRepository _leaveAllocationRepository;
+        private readonly ILeaveAllocationRepository _leaveAllocationRepository;
         private readonly IMapper _mapper;
+
         public DeleteLeaveAllocationCommandHandler(ILeaveAllocationRepository leaveAllocationRepository, IMapper mapper)
         {
             _leaveAllocationRepository = leaveAllocationRepository;
@@ -23,6 +27,7 @@ namespace HrManagement.Application.Features.LeaveAllocations.Handlers.Commands
         public async Task<Unit> Handle(DeleteLeaveAllocationCommand request, CancellationToken cancellationToken)
         {
             var leaveAllocation = await _leaveAllocationRepository.Get(request.Id);
+            if (leaveAllocation == null) { throw new NotFoundException(nameof(LeaveAllocation), request.Id); }
             await _leaveAllocationRepository.Delete(leaveAllocation);
             return Unit.Value;
         }

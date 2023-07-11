@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace HrManagement.Application.Exceptions
 {
-    internal class BadRequestException
+    public class BadRequestException : ApplicationException
     {
+        public BadRequestException(string name, object key) :base($"{name} ({key}) was not found)")
+        {
+            
+        }
     }
 }

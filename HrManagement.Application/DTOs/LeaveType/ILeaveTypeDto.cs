@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace HrManagement.Application.DTOs.LeaveType
 {
-    internal class ILeaveTypeDto
+    public interface ILeaveTypeDto
     {
+        public string Name { get; set; }
+        public int DefaultDays { get; set; }
     }
 }
