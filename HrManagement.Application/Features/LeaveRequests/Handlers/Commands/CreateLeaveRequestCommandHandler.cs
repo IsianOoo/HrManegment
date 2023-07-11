@@ -63,6 +63,13 @@ namespace HrManagement.Application.Features.LeaveRequests.Handlers.Commands
                 $"has been submitted successfully.",
                 Subject = "Leave Request Submitted"
             };
+            try
+            {
+                await _emailSender.SendEmail(email);
+            }catch (Exception ex)
+            {
+
+            }
             return response;
         }
     }
