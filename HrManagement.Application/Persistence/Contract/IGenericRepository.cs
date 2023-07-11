@@ -12,7 +12,7 @@ namespace HrManagement.Application.Persistence.Contract
         Task<IReadOnlyList<T>> GetAll();
         Task<bool> Exists(int id);
         Task<T> Add(T entity);
-        Task<T> Update(T entity);
+        Task Update(T entity);
         Task Delete(T entity);
     }
 }
