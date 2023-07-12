@@ -11,7 +11,7 @@ namespace Hr.Management.Domain
     {
         
         public string Name { get; set; }
-        public int DefultDays { get; set; }
+        public int DefaultDays { get; set; }
         
     }
 }
