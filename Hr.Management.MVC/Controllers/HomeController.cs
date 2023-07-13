@@ -1,8 +1,8 @@
-﻿using Hr.Management.MVC.Models;
+﻿using HR.Management.MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Hr.Management.MVC.Controllers
+namespace HR.Management.MVC.Controllers
 {
     public class HomeController : Controller
     {

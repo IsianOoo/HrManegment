@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Hr.Management.Persistence.Repositories
 {
-    public class LeaveRequestRepository : GenericRepository<LeaveRequest>,ILeaveRequestRepository
+    public class LeaveRequestRepository : GenericRepository<LeaveRequest>, ILeaveRequestRepository
     {
         private readonly LeaveManagmentDbContext _dbContext;
 
@@ -18,9 +18,9 @@ namespace Hr.Management.Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public  async Task ChangeApprovalStatus(LeaveRequest leaveRequest, bool? ApprovalStatus)
+        public async Task ChangeApprovalStatus(LeaveRequest leaveRequest, bool? ApprovalStatus)
         {
-            leaveRequest.Approved = ApprovalStatus; 
+            leaveRequest.Approved = ApprovalStatus;
             _dbContext.Entry(leaveRequest).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
         }

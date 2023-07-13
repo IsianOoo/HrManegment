@@ -1,4 +1,4 @@
-namespace Hr.Management.MVC
+namespace HR.Management.MVC
 {
     public class Program
     {

@@ -35,3 +35,4 @@ namespace Hr.Management.Persistence.Repositories
         }
     }
 }
+
