@@ -1,3 +1,7 @@
+using Hr.Management.MVC.Services.Base;
+
+using System.Reflection;
+
 namespace HR.Management.MVC
 {
     public class Program
@@ -18,7 +22,9 @@ namespace HR.Management.MVC
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            builder.Services.AddHttpClient<IClient,Client>(cl   => cl.BaseAddress = new Uri("https://localhost:7073"));
+            builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            //builder.Services.AddScoped<ILeaveTypeService,LeaveTypeService>();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
