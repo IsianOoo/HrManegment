@@ -16,7 +16,7 @@ namespace Hr.Management.Persistence
                     .Build();
 
                 var builder = new DbContextOptionsBuilder<LeaveManagmentDbContext>();
-                var connectionString = configuration.GetConnectionString("LeaveManagmentConnectionString");
+                var connectionString = configuration.GetConnectionString("LeaveManagementConnectionString");
                 builder.UseSqlServer(connectionString);
                 return new LeaveManagmentDbContext(builder.Options);
             }
