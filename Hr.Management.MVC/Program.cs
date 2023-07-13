@@ -1,3 +1,4 @@
+using Hr.Management.MVC.Contracts;
 using Hr.Management.MVC.Services.Base;
 
 using System.Reflection;
@@ -24,6 +25,7 @@ namespace HR.Management.MVC
             }
             builder.Services.AddHttpClient<IClient,Client>(cl   => cl.BaseAddress = new Uri("https://localhost:7073"));
             builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            builder.Services.AddSingleton<ILocalStorageService,ILocalStorageService>();
             //builder.Services.AddScoped<ILeaveTypeService,LeaveTypeService>();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
