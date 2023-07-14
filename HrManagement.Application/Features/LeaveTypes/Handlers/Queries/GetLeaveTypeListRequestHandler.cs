@@ -19,6 +19,7 @@ namespace HrManagement.Application.Features.LeaveTypes.Handlers.Queries
         public GetLeaveTypeListRequestHandler(ILeaveTypeRepository leaveTypeRepository, IMapper mapper)
         {
             _leaveTypeRepository = leaveTypeRepository;
+            _mapper = mapper;
         }
         public async Task<List<LeaveTypeDto>> Handle(GetLeaveTypeListRequest request, CancellationToken cancellationToken)
         {

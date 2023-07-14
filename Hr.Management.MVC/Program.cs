@@ -17,6 +17,9 @@ namespace HR.Management.MVC
 
             builder.Services.AddHttpClient<IClient, Client>(cl => cl.BaseAddress = new Uri("https://localhost:7073"));
             builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+            builder.Services.AddScoped<ILeaveTypeService, LeaveTypeService>();
+
             builder.Services.AddSingleton<ILocalStorageService, LocalStorageService>();
 
             builder.Services.AddControllersWithViews();
@@ -31,7 +34,7 @@ namespace HR.Management.MVC
                 app.UseHsts();
             }
             
-            //builder.Services.AddScoped<ILeaveTypeService,LeaveTypeService>();
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
