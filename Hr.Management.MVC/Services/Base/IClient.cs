@@ -1,6 +1,9 @@
-﻿namespace Hr.Management.MVC.Services.Base
+﻿using System.Net.Http;
+
+namespace Hr.Management.MVC.Services.Base
 {
-    public class IClient
+    public partial interface IClient
     {
+        public HttpClient HttpClient { get; }
     }
 }
