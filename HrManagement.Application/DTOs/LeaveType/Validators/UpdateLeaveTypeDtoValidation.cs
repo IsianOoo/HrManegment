@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HrManagement.Application.DTOs.LeaveType.Validation
+namespace HrManagement.Application.DTOs.LeaveType.Validators
 {
     public class UpdateLeaveTypeDtoValidation : AbstractValidator<LeaveTypeDto>
     {
